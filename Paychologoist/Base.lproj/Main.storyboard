@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.20" systemVersion="14D2134" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JNz-tn-qKt">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.16"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Split View Controller-->
+        <scene sceneID="ZNR-7N-tEy">
+            <objects>
+                <splitViewController id="JNz-tn-qKt" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="Qrn-p6-cBY" kind="relationship" relationship="masterViewController" id="JJ3-8h-ZpN"/>
+                        <segue destination="tcc-4z-9wX" kind="relationship" relationship="detailViewController" id="pZp-NF-8D7"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kOr-dN-H3W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1699" y="-655"/>
+        </scene>
+        <!--团战数值分析-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="PsychologistViewController" customModule="Paychologoist" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这次数值分析考了多少分啊少年们" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="FUD-67-WMI">
+                                <rect key="frame" x="20" y="64" width="560" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CHi-0O-uyj">
+                                <rect key="frame" x="213" y="279" width="175" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="226" id="Dld-Kf-0Rx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="不说了 这波不亏"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Dld-Kf-0Rx"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <segue destination="tcc-4z-9wX" kind="showDetail" identifier="mah" id="0z8-8D-pbn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KfI-lE-0Jv">
+                                <rect key="frame" x="276" y="328" width="48" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="226" id="88B-b5-hW6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="已崩"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="88B-b5-hW6"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <segue destination="tcc-4z-9wX" kind="showDetail" identifier="bad" id="6wV-ee-tOP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6mf-eP-Yrw">
+                                <rect key="frame" x="207" y="230" width="187" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="226" id="5KB-uR-6dF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="挺好的 double kill"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="5KB-uR-6dF"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <segue destination="tcc-4z-9wX" kind="showDetail" identifier="good" id="gLm-dj-qCu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KfI-lE-0Jv" firstAttribute="top" secondItem="CHi-0O-uyj" secondAttribute="bottom" constant="8" symbolic="YES" id="DoV-fh-HAi"/>
+                            <constraint firstItem="CHi-0O-uyj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="L6G-nq-e69"/>
+                            <constraint firstItem="CHi-0O-uyj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Lul-PP-4JP"/>
+                            <constraint firstItem="CHi-0O-uyj" firstAttribute="centerX" secondItem="FUD-67-WMI" secondAttribute="centerX" id="Msu-zp-q7p"/>
+                            <constraint firstItem="CHi-0O-uyj" firstAttribute="top" secondItem="6mf-eP-Yrw" secondAttribute="bottom" constant="8" symbolic="YES" id="PBf-Xq-ziw"/>
+                            <constraint firstItem="KfI-lE-0Jv" firstAttribute="centerX" secondItem="CHi-0O-uyj" secondAttribute="centerX" id="SSm-Nj-KOt"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CHi-0O-uyj" secondAttribute="bottom" constant="285" id="TpG-NZ-3E4"/>
+                            <constraint firstItem="CHi-0O-uyj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cHX-pl-zbQ"/>
+                            <constraint firstItem="FUD-67-WMI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="fHT-R1-f6W"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FUD-67-WMI" secondAttribute="bottom" constant="514" id="hEE-wk-kHe"/>
+                            <constraint firstItem="FUD-67-WMI" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="kFQ-dG-ULc"/>
+                            <constraint firstItem="FUD-67-WMI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="kuo-lR-qsA"/>
+                            <constraint firstItem="6mf-eP-Yrw" firstAttribute="centerX" secondItem="CHi-0O-uyj" secondAttribute="centerX" id="sN4-hQ-UbB"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Lul-PP-4JP"/>
+                                <exclude reference="Msu-zp-q7p"/>
+                                <exclude reference="TpG-NZ-3E4"/>
+                                <exclude reference="hEE-wk-kHe"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="团战数值分析" id="hOv-U2-QDn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-67" y="-973"/>
+        </scene>
+        <!--Happiness View Controller-->
+        <scene sceneID="Ib7-Pu-jXq">
+            <objects>
+                <viewController id="tcc-4z-9wX" customClass="HappinessViewController" customModule="Paychologoist" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hke-TT-zSf"/>
+                        <viewControllerLayoutGuide type="bottom" id="OFJ-FK-EIv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xGU-iJ-siV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="yub-dK-EeM" customClass="FaveView" customModule="Paychologoist" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="2tc-zM-cZt" appends="YES" id="pVo-fg-FsL"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="yub-dK-EeM" secondAttribute="trailing" id="EkW-xj-enq"/>
+                            <constraint firstItem="yub-dK-EeM" firstAttribute="top" secondItem="xGU-iJ-siV" secondAttribute="top" id="pXR-kS-u5L"/>
+                            <constraint firstItem="yub-dK-EeM" firstAttribute="bottom" secondItem="OFJ-FK-EIv" secondAttribute="top" id="q0u-fb-lDt"/>
+                            <constraint firstItem="yub-dK-EeM" firstAttribute="leading" secondItem="xGU-iJ-siV" secondAttribute="leading" id="ue3-Oi-ZFR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="faceView" destination="yub-dK-EeM" id="PcJ-Le-g49"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ae6-ci-Eoq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="2tc-zM-cZt">
+                    <pressTypeMask key="allowedPressTypes"/>
+                    <connections>
+                        <action selector="changHappiness:" destination="tcc-4z-9wX" id="esP-h8-F6w"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-879" y="-70"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Dmy-lC-dg2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qrn-p6-cBY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TPA-ua-Obs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="LS1-bc-u6A"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hV1-Fu-DfB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-879" y="-973"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="0z8-8D-pbn"/>
+    </inferredMetricsTieBreakers>
+</document>
