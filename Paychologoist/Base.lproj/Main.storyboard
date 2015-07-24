@@ -11,7 +11,7 @@
                 <splitViewController id="JNz-tn-qKt" sceneMemberID="viewController">
                     <connections>
                         <segue destination="Qrn-p6-cBY" kind="relationship" relationship="masterViewController" id="JJ3-8h-ZpN"/>
-                        <segue destination="tcc-4z-9wX" kind="relationship" relationship="detailViewController" id="pZp-NF-8D7"/>
+                        <segue destination="bm9-bS-foI" kind="relationship" relationship="detailViewController" id="pZp-NF-8D7"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kOr-dN-H3W" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -49,7 +49,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="tcc-4z-9wX" kind="showDetail" identifier="mah" id="0z8-8D-pbn"/>
+                                    <segue destination="bm9-bS-foI" kind="showDetail" identifier="mah" id="0z8-8D-pbn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KfI-lE-0Jv">
@@ -65,7 +65,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="tcc-4z-9wX" kind="showDetail" identifier="bad" id="6wV-ee-tOP"/>
+                                    <segue destination="bm9-bS-foI" kind="showDetail" identifier="bad" id="6wV-ee-tOP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6mf-eP-Yrw">
@@ -81,7 +81,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="tcc-4z-9wX" kind="showDetail" identifier="good" id="gLm-dj-qCu"/>
+                                    <segue destination="bm9-bS-foI" kind="showDetail" identifier="good" id="gLm-dj-qCu"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -116,10 +116,10 @@
             </objects>
             <point key="canvasLocation" x="-67" y="-973"/>
         </scene>
-        <!--Happiness View Controller-->
+        <!--History Happiness Controller-->
         <scene sceneID="Ib7-Pu-jXq">
             <objects>
-                <viewController id="tcc-4z-9wX" customClass="HappinessViewController" customModule="Paychologoist" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tcc-4z-9wX" customClass="HistoryHappinessController" customModule="Paychologoist" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hke-TT-zSf"/>
                         <viewControllerLayoutGuide type="bottom" id="OFJ-FK-EIv"/>
@@ -145,6 +145,15 @@
                             <constraint firstItem="yub-dK-EeM" firstAttribute="leading" secondItem="xGU-iJ-siV" secondAttribute="leading" id="ue3-Oi-ZFR"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="A8y-sb-e3B">
+                        <barButtonItem key="rightBarButtonItem" title="点击历史" id="R9W-XY-MOa">
+                            <connections>
+                                <segue destination="ID0-5e-HjI" kind="popoverPresentation" identifier="history" popoverAnchorBarButtonItem="R9W-XY-MOa" id="adQ-Tr-ECy">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="faceView" destination="yub-dK-EeM" id="PcJ-Le-g49"/>
                     </connections>
@@ -157,7 +166,43 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-879" y="-70"/>
+            <point key="canvasLocation" x="-67" y="-70"/>
+        </scene>
+        <!--Text View Controller-->
+        <scene sceneID="LX0-0p-tmG">
+            <objects>
+                <viewController id="ID0-5e-HjI" customClass="TextViewController" customModule="Paychologoist" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eZl-4X-aiS"/>
+                        <viewControllerLayoutGuide type="bottom" id="XeC-Ad-37U"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2BA-dw-rOy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wh2-Pw-Gye">
+                                <rect key="frame" x="20" y="20" width="560" height="560"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wh2-Pw-Gye" firstAttribute="trailing" secondItem="2BA-dw-rOy" secondAttribute="trailingMargin" id="LDN-gf-60w"/>
+                            <constraint firstAttribute="bottom" secondItem="wh2-Pw-Gye" secondAttribute="bottom" constant="20" symbolic="YES" id="bd5-M3-Aib"/>
+                            <constraint firstItem="wh2-Pw-Gye" firstAttribute="leading" secondItem="2BA-dw-rOy" secondAttribute="leadingMargin" id="cQ7-r2-BFB"/>
+                            <constraint firstItem="wh2-Pw-Gye" firstAttribute="top" secondItem="eZl-4X-aiS" secondAttribute="bottom" id="oQ3-62-NnS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="wh2-Pw-Gye" id="Ilr-co-nVM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1pL-VT-aZ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="648" y="-70"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Dmy-lC-dg2">
@@ -176,6 +221,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hV1-Fu-DfB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-879" y="-973"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="idf-53-TfS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bm9-bS-foI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9aP-Kv-8cT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tcc-4z-9wX" kind="relationship" relationship="rootViewController" id="eQb-td-LxH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yBN-Lo-lOK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-879" y="-70"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
